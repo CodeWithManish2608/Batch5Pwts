@@ -3,8 +3,8 @@
 //Declare, Assign Value to Variable and Access the variable
 
 //var reassignment and redeclare and also global scoped/function scoped
-//let reassignment but redeclare is not allowed
-//const reassignment and redeclare is not allowed
+//let reassignment but redeclare is not allowed bcoz its blockedScoped
+//const reassignment and redeclare is not allowed bcoz it blockedScoped
 
 
 var a = 10

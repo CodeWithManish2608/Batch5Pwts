@@ -8,8 +8,10 @@ export class RadioCheckBox{
     async radio()
     {
         const male = this.page.getByTestId('gender-male')
+
         const female = this.page.locator('#gender-female')
         const others = this.page.getByLabel('Other')
+  
 
         await male.check()
         await expect(male).toBeChecked()

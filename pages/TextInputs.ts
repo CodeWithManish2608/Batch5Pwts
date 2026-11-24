@@ -6,7 +6,10 @@ export class textInputs{
     async assertHeading()
     {
         const heading = this.page.getByRole('heading', {name: 'Basic Elements'});
+        //await heading.waitFor({state: 'visible'})
+        console.log( await heading.textContent());
         await expect(heading).toBeVisible()
+        await expect(heading).toHaveText('Basic Elements')
     }
 
     async formfilling()
@@ -30,7 +33,7 @@ export class textInputs{
         const saveBtn = this.page.getByTestId('save-btn')
         await saveBtn.click();
     
-        await saveBtn.nth(1).click()
+        //await saveBtn.nth(1).click()
 
 
     }
