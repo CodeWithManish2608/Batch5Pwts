@@ -10,4 +10,5 @@ test('Validation of URL', async ({ page }) => {
     const x =new dropdowns(page)
     await x.selectDropDown()
     await x.multiChoice()
+    await x.SearchDropDown()
 });

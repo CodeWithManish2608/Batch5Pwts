@@ -18,13 +18,38 @@ export class dropdowns{
         await skills.click()
         
         const js = this.page.getByTestId('skill-option-javascript')
-        await js.check()
-        await expect(js).toBeChecked()
+        await js.click()
+        await expect(js).toBeVisible()
 
         const ts = this.page.getByTestId('skill-option-typescript')
-        await ts.check()
-        await expect(ts).toBeChecked()
-        
+        await ts.click()
+        await expect(ts).toHaveAttribute('aria-selected', 'true')
+
+        const pw = this.page.getByTestId('skill-option-playwright')
+        await pw.click()
+        await expect(pw).toHaveAttribute('aria-selected', 'true')
+
+        const removePlaywright = this.page.getByRole('button', {name: 'Remove Playwright'})
+        await removePlaywright.click()
+
+        await expect(removePlaywright).not.toBeVisible()
 
     }
+
+    async SearchDropDown(){
+
+        const searchInput = this.page.getByTestId('searchable-dropdown')
+
+        await searchInput.fill('Re')
+        
+        const react = this.page.getByTestId('search-option-react')
+        await react.click();
+
+        await expect(searchInput).toHaveValue('React')
+
+    }
+
+
+
+
 }
